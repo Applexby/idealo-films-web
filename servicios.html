@@ -689,6 +689,14 @@ img{max-width:100%;display:block}
 @media(max-width:960px){.pk:not(.hot){border-color:rgba(21,19,28,.2);box-shadow:0 14px 34px rgba(20,15,10,.07)}}
 
 .v-player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;border:0}.v-player.playing .v-play{display:none}
+.reel-stack{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 18px;align-items:center;background:linear-gradient(135deg,#1c1626,#2a2030)}
+.reel-stack figure{position:relative;margin:0;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 14px 30px rgba(0,0,0,.35);transition:transform .35s ease}
+.reel-stack figure:nth-child(odd){transform:translateY(-7%)}
+.reel-stack figure:nth-child(even){transform:translateY(7%)}
+.reel-stack figure:hover{transform:translateY(0) scale(1.04)}
+.reel-stack img{width:100%;height:100%;object-fit:cover;display:block}
+.reel-stack span{position:absolute;right:8px;top:8px;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.9);color:#131019;display:grid;place-items:center}
+@media(max-width:700px){.reel-stack{gap:8px;padding:0 10px}.reel-stack figure{border-radius:10px}.reel-stack span{width:20px;height:20px}}
 </style>
 </head>
 <body>
@@ -747,7 +755,7 @@ img{max-width:100%;display:block}
     <ul class="checks"><li>Idea creativa y guion</li><li>Formatos horizontal y vertical</li><li>Versiones para pauta</li></ul>
     <div class="svc-actions"><a class="btn-dark" href="https://api.whatsapp.com/send/?phone=51907789967&text=Hola+Idealo,+quiero+cotizar+un+video+publicitario" target="_blank" rel="noopener">Cotizar</a><a class="txt-link" href="video-publicitario.html">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
 </article><article class="svc-item" id="reels">
-  <div class="svc-media"><img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1400,c_fill,ar_16:9,g_auto,q_auto,f_auto/v1773521975/_DSC6032_ert2rj.jpg" alt="Reels para redes" loading="lazy"/></div>
+  <div class="svc-media reel-stack"><figure><img src="https://vumbnail.com/1067030347.jpg" alt="Reel de Motofácil" loading="lazy"/><span><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></span></figure><figure><img src="https://vumbnail.com/1124965144.jpg" alt="Reel de GLUU BABY" loading="lazy"/><span><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></span></figure><figure><img src="https://vumbnail.com/1124969220.jpg" alt="Reel de Racers Cars" loading="lazy"/><span><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></span></figure><figure><img src="https://vumbnail.com/1020242165.jpg" alt="Reel de Gorilla 6.77" loading="lazy"/><span><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></span></figure></div>
   <div class="svc-text"><h2>Reels para redes</h2><p>Contenido vertical constante para Instagram y TikTok.</p>
     <ul class="checks"><li>Guiones y planificación</li><li>Grabación y edición</li><li>Subtítulos y locución</li></ul>
     <div class="svc-actions"><a class="btn-dark" href="https://api.whatsapp.com/send/?phone=51907789967&text=Hola+Idealo,+quiero+cotizar+reels+para+mi+marca" target="_blank" rel="noopener">Cotizar</a><a class="txt-link" href="paquetes.html#reels">Ver precios</a><a class="txt-link" href="reels.html">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
@@ -862,7 +870,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
 // Video embebido: se carga al hacer clic
 function embedUrl(u){ return u+(u.includes('?')?'&':'?')+'autoplay=1'; }
 document.querySelectorAll('.v-player').forEach(p=>{
-  const go=()=>{ if(p.querySelector('iframe,video')) return; const u=p.dataset.video; let f; if(/\.mp4($|\?)/.test(u)){ f=document.createElement('video'); f.src=u; f.controls=true; f.autoplay=true; f.playsInline=true; f.preload='auto'; const im=p.querySelector('img'); if(im) f.poster=im.currentSrc||im.src; } else { f=document.createElement('iframe'); f.src=embedUrl(u); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; } f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); p.classList.add('playing'); };
+  const go=()=>{ if(p.querySelector('iframe,.ip')) return; const u=p.dataset.video; let f; if(/\.mp4($|\?)/.test(u)){ const im=p.querySelector('img'); idealoPlayer(p,u,{poster:im?(im.currentSrc||im.src):''}); p.classList.add('playing'); p.style.cursor='default'; return; } else { f=document.createElement('iframe'); f.src=embedUrl(u); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; } f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); p.classList.add('playing'); };
   p.addEventListener('click',go); p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 

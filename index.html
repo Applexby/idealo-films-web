@@ -242,7 +242,7 @@ img{max-width:100%;display:block}
 .video-modal.open{display:flex}
 .modal-inner{width:100%;max-width:960px;position:relative}
 .modal-video-wrap{position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;background:#000}
-.modal-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.modal-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}.modal-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .modal-close{position:absolute;top:-46px;right:0;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer}
 </style>
 </head>
@@ -350,7 +350,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="services-row" id="servicesRow">
       <a class="service-card is-active" href="servicios.html#video-corp">
-        <img src="https://res.cloudinary.com/dnprz5iie/image/upload/q_100/v1773522955/man_energy_solutions_yvg6wd.jpg" alt="Video Corporativo"/>
+        <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="Video Corporativo"/>
         <div class="service-blur"></div>
         <div class="service-info"><span class="service-name">Video Corporativo</span><span class="service-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
@@ -384,19 +384,19 @@ img{max-width:100%;display:block}
       <a href="proyectos.html" class="btn-ghost">Ver todos los proyectos</a>
     </div>
     <div class="works-grid">
-      <a class="work-tile" data-url="https://www.dailymotion.com/embed/video/k66N8CAubJV92yBE4Mu" onclick="abrirModal(this)">
-        <img src="https://res.cloudinary.com/dnprz5iie/image/upload/q_100/v1773522955/man_energy_solutions_yvg6wd.jpg" alt="Man Energy Solutions"/>
+      <a class="work-tile" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297133/MAN-ENERGY-PERU-VIDEO-CORPORATIVO_001_1080p_haycwx.mp4" onclick="abrirModal(this)">
+        <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="Man Energy Solutions"/>
         <div class="work-tile-overlay"><div class="work-tag">Video Corporativo</div><div class="work-title">Man Energy Solutions Perú</div></div>
         <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
       </a>
       <div class="works-col">
-      <a class="work-tile" data-url="https://player.vimeo.com/video/1125301867" onclick="abrirModal(this)">
-          <img src="https://res.cloudinary.com/dnprz5iie/image/upload/v1773522954/DSC06662-Mejorado-NR_1_11zon_jyhfkt.jpg" alt="Huaquian SAC"/>
+      <a class="work-tile" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297137/HUAQUIAN-SAC-VIDEO-CORPORATIVO-HORIZONTAL-v1-0_001_1080p_ssxrja.mp4" onclick="abrirModal(this)">
+          <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg" alt="Huaquian SAC"/>
           <div class="work-tile-overlay"><div class="work-tag">Video Corporativo</div><div class="work-title">Huaquian SAC</div></div>
           <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
         </a>
-      <a class="work-tile" data-url="https://www.dailymotion.com/embed/video/k1Pmleb8qPUSx0BE4Ta" onclick="abrirModal(this)">
-          <img src="https://res.cloudinary.com/dnprz5iie/image/upload/v1773522953/adm_miniatura_imagen_1_IA_xertgs.jpg" alt="Asociación de Damas Mexicanas"/>
+      <a class="work-tile" data-url="https://www.youtube.com/embed/aTmvIAZz1kQ?rel=0" onclick="abrirModal(this)">
+          <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg" alt="Asociación de Damas Mexicanas"/>
           <div class="work-tile-overlay"><div class="work-tag">Video Documental</div><div class="work-title">Asociación de Damas Mexicanas</div></div>
           <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
         </a>
@@ -577,7 +577,14 @@ document.getElementById('demoVideo').addEventListener('ended',()=>{
 function abrirModal(el){
   event.preventDefault();
   const url=el.getAttribute('data-url');
-  document.getElementById('modalIframe').src=url+'?autoplay=1';
+  const wrap=document.querySelector('.modal-video-wrap'), ifr=document.getElementById('modalIframe');
+  wrap.querySelectorAll('video').forEach(v=>v.remove());
+  if(/\.mp4($|\?)/.test(url)){
+    ifr.style.display='none'; ifr.src='';
+    const v=document.createElement('video'); v.src=url; v.controls=true; v.autoplay=true; v.playsInline=true;
+    const im=el.querySelector('img'); if(im) v.poster=im.currentSrc||im.src;
+    wrap.appendChild(v);
+  } else { ifr.style.display=''; ifr.src=url+(url.includes('?')?'&':'?')+'autoplay=1'; }
   document.getElementById('videoModal').classList.add('open');
 }
 document.getElementById('modalClose').addEventListener('click',cerrarModal);
@@ -585,6 +592,7 @@ document.getElementById('videoModal').addEventListener('click',e=>{ if(e.target.
 function cerrarModal(){
   document.getElementById('videoModal').classList.remove('open');
   document.getElementById('modalIframe').src='';
+  document.querySelectorAll('.modal-video-wrap video').forEach(v=>{v.pause();v.remove();});
 }
 
 // services carousel - center/hover grows

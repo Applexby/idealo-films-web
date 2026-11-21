@@ -534,6 +534,7 @@ img{max-width:100%;display:block}
 @media(max-width:1000px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
 
 
+.v-player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;border:0}.v-player.playing .v-play{display:none}
 </style>
 </head>
 <body>
@@ -576,7 +577,7 @@ img{max-width:100%;display:block}
   </div>
 </nav>
 <header class="g-hero">
-  <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_2400,c_limit,q_auto:good,f_auto/v1773522954/DSC06662-Mejorado-NR_1_11zon_jyhfkt.jpg" alt="Huaquian SAC"/>
+  <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_2400,c_limit,q_auto:good,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg" alt="Huaquian SAC"/>
   <div class="g-hero-info"><div class="container">
     <div><div class="g-kicker">Video corporativo</div><h1>Huaquian SAC</h1></div>
     <a href="#video" class="g-scroll">Ver video <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
@@ -587,8 +588,8 @@ img{max-width:100%;display:block}
   <a href="video-corporativo.html" class="g-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg><span>Volver</span></a>
 </div></div>
 <main class="v-main" id="video" style="scroll-margin-top:130px"><div class="container">
-  <div class="v-player" data-video="https://player.vimeo.com/video/1125301867" role="button" tabindex="0" aria-label="Reproducir video de Huaquian SAC">
-    <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto:good,f_auto/v1773522954/DSC06662-Mejorado-NR_1_11zon_jyhfkt.jpg" alt="" loading="lazy"/>
+  <div class="v-player" data-video="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297137/HUAQUIAN-SAC-VIDEO-CORPORATIVO-HORIZONTAL-v1-0_001_1080p_ssxrja.mp4" role="button" tabindex="0" aria-label="Reproducir video de Huaquian SAC">
+    <img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto:good,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg" alt="" loading="lazy"/>
     <span class="v-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></span>
   </div>
   <div class="v-info">
@@ -607,7 +608,7 @@ img{max-width:100%;display:block}
     </aside>
   </div>
 </div></main>
-<section class="next"><div class="container"><div class="p-head"><div><div class="eyebrow">Sigue explorando</div><h2>Más proyectos</h2></div><a href="proyectos.html" class="btn-ghost" style="background:#fff">Ver todos los proyectos</a></div><div class="next-row"><a class="next-card" href="corporativo-man-energy-solutions-peru.html"><img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_fill,q_auto,f_auto/v1773522955/man_energy_solutions_yvg6wd.jpg" alt="" loading="lazy"/><div><small>Anterior · Video corporativo</small><b>Man Energy Solutions Perú</b></div></a><a class="next-card" href="corporativo-damas-mexicanas.html"><img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_fill,q_auto,f_auto/v1773522953/adm_miniatura_imagen_1_IA_xertgs.jpg" alt="" loading="lazy"/><div><small>Siguiente · Video corporativo</small><b>Asociación de Damas Mexicanas</b></div></a></div></div></section>
+<section class="next"><div class="container"><div class="p-head"><div><div class="eyebrow">Sigue explorando</div><h2>Más proyectos</h2></div><a href="proyectos.html" class="btn-ghost" style="background:#fff">Ver todos los proyectos</a></div><div class="next-row"><a class="next-card" href="corporativo-man-energy-solutions-peru.html"><img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_fill,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="" loading="lazy"/><div><small>Anterior · Video corporativo</small><b>Man Energy Solutions Perú</b></div></a><a class="next-card" href="corporativo-sbs-librerias.html"><img src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_fill,q_auto,f_auto/v1795298122/SBS_PORTADA_l2tfrq.png" alt="" loading="lazy"/><div><small>Siguiente · Video institucional</small><b>SBS Librerías · 30 aniversario</b></div></a></div></div></section>
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-dots"></div>
@@ -704,7 +705,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
 // Video embebido: se carga al hacer clic
 function embedUrl(u){ return u+(u.includes('?')?'&':'?')+'autoplay=1'; }
 document.querySelectorAll('.v-player').forEach(p=>{
-  const go=()=>{ if(p.querySelector('iframe')) return; const f=document.createElement('iframe'); f.src=embedUrl(p.dataset.video); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); };
+  const go=()=>{ if(p.querySelector('iframe,video')) return; const u=p.dataset.video; let f; if(/\.mp4($|\?)/.test(u)){ f=document.createElement('video'); f.src=u; f.controls=true; f.autoplay=true; f.playsInline=true; f.preload='auto'; const im=p.querySelector('img'); if(im) f.poster=im.currentSrc||im.src; } else { f=document.createElement('iframe'); f.src=embedUrl(u); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; } f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); p.classList.add('playing'); };
   p.addEventListener('click',go); p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 

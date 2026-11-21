@@ -688,6 +688,7 @@ img{max-width:100%;display:block}
 .pk:not(.hot) .btn-ghost{background:#fff;border-color:rgba(21,19,28,.18)}
 @media(max-width:960px){.pk:not(.hot){border-color:rgba(21,19,28,.2);box-shadow:0 14px 34px rgba(20,15,10,.07)}}
 
+.v-player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;border:0}.v-player.playing .v-play{display:none}
 </style>
 </head>
 <body>
@@ -849,7 +850,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
 // Video embebido: se carga al hacer clic
 function embedUrl(u){ return u+(u.includes('?')?'&':'?')+'autoplay=1'; }
 document.querySelectorAll('.v-player').forEach(p=>{
-  const go=()=>{ if(p.querySelector('iframe')) return; const f=document.createElement('iframe'); f.src=embedUrl(p.dataset.video); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); };
+  const go=()=>{ if(p.querySelector('iframe,video')) return; const u=p.dataset.video; let f; if(/\.mp4($|\?)/.test(u)){ f=document.createElement('video'); f.src=u; f.controls=true; f.autoplay=true; f.playsInline=true; f.preload='auto'; const im=p.querySelector('img'); if(im) f.poster=im.currentSrc||im.src; } else { f=document.createElement('iframe'); f.src=embedUrl(u); f.allow='autoplay; fullscreen; picture-in-picture'; f.allowFullscreen=true; } f.title=p.getAttribute('aria-label')||'Video'; p.appendChild(f); p.classList.add('playing'); };
   p.addEventListener('click',go); p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 

@@ -1,0 +1,22 @@
+{
+ "name": "Idealo Films",
+ "short_name": "Idealo",
+ "description": "Productora audiovisual en Lima. Creamos videos corporativos y publicitarios, reels para redes, cobertura de eventos y fotografía profesional para tu marca.",
+ "start_url": "/",
+ "display": "standalone",
+ "lang": "es-PE",
+ "background_color": "#ffffff",
+ "theme_color": "#ff7a1a",
+ "icons": [
+  {
+   "src": "https://res.cloudinary.com/dnprz5iie/image/upload/w_192,h_192,c_pad,b_white,q_auto,f_png/v1774831703/Recurso_8_2x_pfwtpn.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "https://res.cloudinary.com/dnprz5iie/image/upload/w_512,h_512,c_pad,b_white,q_auto,f_png/v1774831703/Recurso_8_2x_pfwtpn.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

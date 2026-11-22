@@ -27,13 +27,18 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://idealofilms.com/#organizacion","name":"Idealo Films","legalName":"Idealo Films S.A.C.","url":"https://idealofilms.com/","logo":"https://res.cloudinary.com/dnprz5iie/image/upload/h_240,c_limit,q_auto,f_png/v1773951904/Recurso_10_i38u5g.png","image":"https://res.cloudinary.com/dnprz5iie/image/upload/c_fill,g_auto,w_1200,h_630,q_auto,f_jpg/v1773951889/hero-bg_wpfzip.jpg","description":"Productora audiovisual en Lima. Creamos videos corporativos y publicitarios, reels para redes, cobertura de eventos y fotografía profesional para tu marca.","telephone":"+51907789967","email":"ventas@idealofilms.com","foundingDate":"2023-11","taxID":"20611785381","address":{"@type":"PostalAddress","streetAddress":"Cal. 23 Mza. Q Lote 19, Urb. Pachacamac","addressLocality":"Villa El Salvador","addressRegion":"Lima","addressCountry":"PE"},"areaServed":{"@type":"City","name":"Lima"},"sameAs":["https://www.instagram.com/idealo.pe_/","https://www.facebook.com/idealo.pe22/","https://www.tiktok.com/@idealo.pe","https://www.linkedin.com/company/idealo-films/"],"knowsAbout":["Video corporativo","Video publicitario","Reels para redes sociales","Cobertura de eventos","Fotografía profesional"],"priceRange":"S/ 200 – S/ 1,600"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://idealofilms.com/#web","name":"Idealo Films","url":"https://idealofilms.com/","inLanguage":"es-PE","publisher":{"@id":"https://idealofilms.com/#organizacion"}}</script>
 <link rel="preload" as="image" href="https://res.cloudinary.com/dnprz5iie/image/upload/w_900,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg" media="(max-width:700px)" fetchpriority="high">
-<link rel="preload" as="image" href="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://res.cloudinary.com/dnprz5iie/image/upload/w_1400,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg" media="(min-width:701px) and (max-width:1280px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg" media="(min-width:1281px)" fetchpriority="high">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="dns-prefetch" href="https://res.cloudinary.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <style>
+@font-face{font-family:"Unbounded Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Arimo Bold"),local("Roboto Bold"),local("Roboto-Bold");font-weight:100 900;size-adjust:134%;ascent-override:74.6%;descent-override:18.7%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Arimo"),local("Roboto"),local("Roboto-Regular");font-weight:100 900;size-adjust:106%;ascent-override:91.5%;descent-override:22.6%;line-gap-override:0%}
+
 :root{
   --bg:#ffffff;
   --bg-soft:#f6f3ee;
@@ -51,8 +56,8 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,.display{font-family:'Unbounded',sans-serif;line-height:1.1;letter-spacing:-.01em}
+body{font-family:'Inter','Inter Fallback',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.display{font-family:'Unbounded','Unbounded Fallback',sans-serif;line-height:1.1;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 32px}
@@ -128,14 +133,14 @@ img{max-width:100%;display:block}
 .showreel-collage img{width:100%;height:100%;object-fit:cover;filter:brightness(.62)}
 .showreel-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
 .showreel-type{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
-.showreel-type .l1{color:#fff;font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.4vw,1.8rem);letter-spacing:.02em}
-.showreel-type .l2{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(2.2rem,7vw,5rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.showreel-type .l1{color:#fff;font-family:'Unbounded','Unbounded Fallback',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.4vw,1.8rem);letter-spacing:.02em}
+.showreel-type .l2{font-family:'Unbounded','Unbounded Fallback',sans-serif;font-weight:800;font-size:clamp(2.2rem,7vw,5rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
 .showreel-play{position:absolute;bottom:18px;right:18px;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff}
 .showreel-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 20px 12px;flex-wrap:wrap}
 .showreel-foot p{font-size:1.05rem;max-width:34ch}
 .showreel-foot p span{color:var(--ink-soft)}
 .showreel-nums{display:flex;gap:38px}
-.showreel-nums b{display:block;font-family:'Unbounded',sans-serif;font-size:1.7rem}
+.showreel-nums b{display:block;font-family:'Unbounded','Unbounded Fallback',sans-serif;font-size:1.7rem}
 .showreel-nums span{color:var(--ink-soft);font-size:.8rem}
 
 /* ---------- SERVICIOS (carrusel de imágenes) ---------- */
@@ -146,7 +151,7 @@ img{max-width:100%;display:block}
 .service-card.is-active{flex:2.6}
 .service-blur{position:absolute;left:0;right:0;bottom:0;height:38%;pointer-events:none;background:linear-gradient(180deg,rgba(19,16,25,0) 0%,rgba(19,16,25,.18) 35%,rgba(19,16,25,.55) 70%,rgba(19,16,25,.78) 100%)}
 .service-info{position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
-.service-name{color:#fff;font-family:'Unbounded',sans-serif;font-size:1rem;line-height:1.25;max-width:14ch;opacity:.85}
+.service-name{color:#fff;font-family:'Unbounded','Unbounded Fallback',sans-serif;font-size:1rem;line-height:1.25;max-width:14ch;opacity:.85}
 .service-card.is-active .service-name{font-size:1.3rem;opacity:1}
 .service-arrow{width:36px;height:36px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#1a0e05;flex-shrink:0}
 @media(max-width:768px){.services-row{height:auto;flex-direction:column}.service-card{aspect-ratio:16/10}.service-card.is-active{flex:1}}
@@ -163,7 +168,7 @@ img{max-width:100%;display:block}
 .work-tile:hover img{transform:scale(1.06)}
 .work-tile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.82) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
 .work-tag{color:var(--accent-2);font-size:.78rem;font-weight:600;margin-bottom:4px}
-.work-title{font-family:'Unbounded',sans-serif;font-size:1.05rem;color:#fff}
+.work-title{font-family:'Unbounded','Unbounded Fallback',sans-serif;font-size:1.05rem;color:#fff}
 .work-play{position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff}
 
 /* ---------- CLIENTES ---------- */
@@ -177,7 +182,7 @@ img{max-width:100%;display:block}
 .clients-text h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:14px}
 .clients-text p{color:var(--ink-soft);line-height:1.65;margin-bottom:18px}
 .clients-stat{display:flex;gap:16px;align-items:center;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
-.clients-stat b{font-family:'Unbounded',sans-serif;font-size:2.2rem;line-height:1;color:var(--accent)}
+.clients-stat b{font-family:'Unbounded','Unbounded Fallback',sans-serif;font-size:2.2rem;line-height:1;color:var(--accent)}
 .clients-stat span{color:var(--ink);font-size:.92rem;line-height:1.4;font-weight:500;max-width:16ch}
 
 /* ---------- TESTIMONIOS ---------- */
@@ -185,7 +190,7 @@ img{max-width:100%;display:block}
 @media(max-width:900px){.testi-row{grid-template-columns:1fr;gap:36px}}
 .testi-item{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 20px 45px rgba(20,15,10,.06)}
 .testi-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-weight:700;color:#1a0e05;font-size:.95rem}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Unbounded','Unbounded Fallback',sans-serif;font-weight:700;color:#1a0e05;font-size:.95rem}
 .testi-top strong{display:block;font-size:.95rem}
 .testi-top span{color:var(--ink-soft);font-size:.82rem}
 .testi-stars{display:flex;align-items:center;gap:3px;color:var(--accent);margin-bottom:16px}
@@ -318,7 +323,11 @@ img{max-width:100%;display:block}
 .nl-msg.ok{color:#ffc978}.nl-msg.err{color:#ff9a8a}
 .nl-legal{font-size:.72rem;line-height:1.5;color:rgba(255,255,255,.45);margin-top:10px}
 .nl-legal a{font-size:inherit!important;display:inline!important;padding:0!important;color:rgba(255,255,255,.7)!important;text-decoration:underline}
-@media(max-width:700px){.hero-slide--active{background-image:url('https://res.cloudinary.com/dnprz5iie/image/upload/w_900,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg')!important}}
+@media(max-width:700px){.hero-slide--active{background-image:url('https://res.cloudinary.com/dnprz5iie/image/upload/w_900,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg')!important}}@media(min-width:701px) and (max-width:1280px){.hero-slide--active{background-image:url('https://res.cloudinary.com/dnprz5iie/image/upload/w_1400,c_limit,q_auto,f_auto/v1773951889/hero-bg_wpfzip.jpg')!important}}
+.eyebrow{color:#b84a00}.clients-stat b,.story-list li>b,.count-pill b{color:#b84a00}
+.footer-col .f-h{font-family:inherit;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);margin:0 0 18px}
+@media(max-width:768px){.footer-col .f-h{margin-bottom:12px;font-size:.78rem}}
+.footer-links a{display:inline-block;padding:5px 0}
 </style>
 </head>
 <body>
@@ -387,13 +396,13 @@ img{max-width:100%;display:block}
   <div class="showreel-card">
     <div class="showreel-media" id="demoPoster" onclick="reproducirDemo()">
       <div class="showreel-collage">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1920w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg" alt=""/>
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1920w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg" alt=""/>
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1920w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg" alt=""/>
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1920w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg" alt=""/>
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1920w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg" alt=""/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg 1920w" sizes="(max-width:700px) 20vw, 260px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1795312463/_DSC6029_tvpobz_uetzlk.jpg" alt=""/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1920w" sizes="(max-width:700px) 20vw, 260px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg" alt=""/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg 1920w" sizes="(max-width:700px) 20vw, 260px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773522027/_DSC0342_huac1u.jpg" alt=""/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1920w" sizes="(max-width:700px) 20vw, 260px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg" alt=""/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg 1920w" sizes="(max-width:700px) 20vw, 260px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521950/DSC03091_1_11zon_ndieje.jpg" alt=""/>
       </div>
-      <video id="demoVideo" class="showreel-video" src="https://res.cloudinary.com/dnprz5iie/video/upload/v1774021201/VIDEO_DEMO_REEL_v1_giy7kg.mp4" playsinline controls></video>
+      <video id="demoVideo" class="showreel-video" src="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1774021201/VIDEO_DEMO_REEL_v1_giy7kg.mp4" preload="none" playsinline controls></video>
       <div class="showreel-type" id="showreelType">
         <span class="l1">IDEALO</span>
         <span class="l2">SHOWREEL</span>
@@ -425,22 +434,22 @@ img{max-width:100%;display:block}
     </div>
     <div class="services-row" id="servicesRow">
       <a class="service-card is-active" href="/servicios#video-corp">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1600w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="Video Corporativo"/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1600w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt=""/>
         <div class="service-blur"></div>
         <div class="service-info"><span class="service-name">Video Corporativo</span><span class="service-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
       <a class="service-card" href="/servicios#reels">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1920w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg" alt="Video para Redes Sociales"/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg 1920w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521964/DSC03506_4_11zon_rltfk5.jpg" alt=""/>
         <div class="service-blur"></div>
         <div class="service-info"><span class="service-name">Video para Redes Sociales</span><span class="service-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
       <a class="service-card" href="/servicios#foto">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1920w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg" alt="Fotografía Corporativa"/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1600w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg 1920w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1920,c_limit,q_auto,f_auto/v1773521937/DSC02580_4_11zon_dqmrjo.jpg" alt=""/>
         <div class="service-blur"></div>
         <div class="service-info"><span class="service-name">Fotografía Corporativa</span><span class="service-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
       <a class="service-card" href="/servicios#eventos">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 1200w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png" alt="Cobertura de Eventos"/>
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png 1200w" sizes="(max-width:768px) 92vw, 45vw" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795299793/cobertura_man_energy_portada_gx6jki.png" alt=""/>
         <div class="service-blur"></div>
         <div class="service-info"><span class="service-name">Cobertura de Eventos</span><span class="service-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
@@ -459,19 +468,19 @@ img{max-width:100%;display:block}
       <a href="/proyectos" class="btn-ghost">Ver todos los proyectos</a>
     </div>
     <div class="works-grid">
-      <a class="work-tile" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297133/MAN-ENERGY-PERU-VIDEO-CORPORATIVO_001_1080p_haycwx.mp4" data-duration="128.8" onclick="abrirModal(this)">
-        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="Man Energy Solutions"/>
+      <a class="work-tile" href="/corporativo-man-energy-solutions-peru" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297133/MAN-ENERGY-PERU-VIDEO-CORPORATIVO_001_1080p_haycwx.mp4" data-duration="128.8" onclick="abrirModal(this);return false">
+        <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_MAN_rwu5ww.png" alt="Man Energy Solutions"/>
         <div class="work-tile-overlay"><div class="work-tag">Video Corporativo</div><div class="work-title">Man Energy Solutions Perú</div></div>
         <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
       </a>
       <div class="works-col">
-      <a class="work-tile" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297137/HUAQUIAN-SAC-VIDEO-CORPORATIVO-HORIZONTAL-v1-0_001_1080p_ssxrja.mp4" data-duration="129.85" onclick="abrirModal(this)">
-          <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg" alt="Huaquian SAC"/>
+      <a class="work-tile" href="/corporativo-huaquian-sac" data-url="https://res.cloudinary.com/dnprz5iie/video/upload/q_auto/v1795297137/HUAQUIAN-SAC-VIDEO-CORPORATIVO-HORIZONTAL-v1-0_001_1080p_ssxrja.mp4" data-duration="129.85" onclick="abrirModal(this);return false">
+          <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297749/DSC06662-Mejorado-NR_sfuvsc.jpg" alt="Huaquian SAC"/>
           <div class="work-tile-overlay"><div class="work-tag">Video Corporativo</div><div class="work-title">Huaquian SAC</div></div>
           <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
         </a>
-      <a class="work-tile" data-url="https://www.youtube.com/embed/aTmvIAZz1kQ?rel=0" onclick="abrirModal(this)">
-          <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg" alt="Asociación de Damas Mexicanas"/>
+      <a class="work-tile" href="/corporativo-damas-mexicanas" data-url="https://www.youtube.com/embed/aTmvIAZz1kQ?rel=0" onclick="abrirModal(this);return false">
+          <img decoding="async" srcset="https://res.cloudinary.com/dnprz5iie/image/upload/w_320,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 320w, https://res.cloudinary.com/dnprz5iie/image/upload/w_480,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 480w, https://res.cloudinary.com/dnprz5iie/image/upload/w_800,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 800w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1200,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 1200w, https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg 1600w" sizes="(max-width:1300px) 92vw, 1200px" src="https://res.cloudinary.com/dnprz5iie/image/upload/w_1600,c_limit,q_auto,f_auto/v1795297556/PORTADA_ADM_yffvg1.jpg" alt="Asociación de Damas Mexicanas"/>
           <div class="work-tile-overlay"><div class="work-tag">Video Documental</div><div class="work-title">Asociación de Damas Mexicanas</div></div>
           <div class="work-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
         </a>
@@ -491,18 +500,18 @@ img{max-width:100%;display:block}
         <div class="clients-stat"><b>+25</b><span>marcas que ya confiaron en Idealo</span></div>
       </div>
       <div class="clients-logos">
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394916/LOGO_HUAQUIAN_rdievu.png" alt="Huaquian" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394915/LOGO_TODO_MAQUINARIAS_soxkrt.png" alt="Todo Maquinarias" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394914/LOGO_HAKU_MOTORS_vaawhy.png" alt="Haku Motors" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394913/LOGO_ZAYMA_usd7hn.png" alt="Zayma" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394912/LOGO_TAK_LAB_lp6urc.png" alt="Tak Lab" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394911/LOGO_MOTOFACIL_fkzkwc.png" alt="Motofácil" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394911/LOGO_IMPRESCINDIBLE_prkyqv.png" alt="Imprescindible" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394910/LOGO_JOY_LOGISITCS_qdlgtp.png" alt="Joy Logistics" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394909/LOGO_TERRAZA_CASUARINAS_cdk1rb.png" alt="Terraza Casuarinas" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394909/LOGO_GRUPO_m_m_pilqjk.png" alt="Grupo M&amp;M" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394909/LOGO_MAN_ENERGY_xie3bf.png" alt="Man Energy" loading="lazy"/>
-        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_200,c_limit,q_auto,f_auto/v1791394909/LOGO_UNACER_nwwn7x.png" alt="Unacer" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394916/LOGO_HUAQUIAN_rdievu.png" alt="Huaquian" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394915/LOGO_TODO_MAQUINARIAS_soxkrt.png" alt="Todo Maquinarias" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394914/LOGO_HAKU_MOTORS_vaawhy.png" alt="Haku Motors" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394913/LOGO_ZAYMA_usd7hn.png" alt="Zayma" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394912/LOGO_TAK_LAB_lp6urc.png" alt="Tak Lab" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394911/LOGO_MOTOFACIL_fkzkwc.png" alt="Motofácil" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394911/LOGO_IMPRESCINDIBLE_prkyqv.png" alt="Imprescindible" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394910/LOGO_JOY_LOGISITCS_qdlgtp.png" alt="Joy Logistics" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394909/LOGO_TERRAZA_CASUARINAS_cdk1rb.png" alt="Terraza Casuarinas" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394909/LOGO_GRUPO_m_m_pilqjk.png" alt="Grupo M&amp;M" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394909/LOGO_MAN_ENERGY_xie3bf.png" alt="Man Energy" loading="lazy"/>
+        <img decoding="async" src="https://res.cloudinary.com/dnprz5iie/image/upload/h_100,c_limit,q_auto,f_auto/v1791394909/LOGO_UNACER_nwwn7x.png" alt="Unacer" loading="lazy"/>
       </div>
     </div>
   </div>
@@ -571,20 +580,20 @@ img{max-width:100%;display:block}
           </a>
         </div>
       </div>
-      <div class="footer-col"><h4>Navegación</h4><ul>
+      <div class="footer-col"><h2 class="f-h">Navegación</h2><ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/proyectos">Proyectos</a></li>
         <li><a href="/servicios">Servicios</a></li>
         <li><a href="/paquetes">Paquetes</a></li>
         <li><a href="/nosotros">Nosotros</a></li>
       </ul></div>
-      <div class="footer-col"><h4>Contacto</h4><ul>
+      <div class="footer-col"><h2 class="f-h">Contacto</h2><ul>
         <li><a href="tel:+51907789967">+51 907 789 967</a></li>
         <li><a href="mailto:ventas@idealofilms.com">ventas@idealofilms.com</a></li>
         <li><a href="#">Lima, Perú</a></li>
       </ul></div>
       <div class="footer-col newsletter">
-        <h4>Mantente al día</h4>
+        <h2 class="f-h">Mantente al día</h2>
         <p style="color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.6">Recibe novedades y contenido detrás de cámaras.</p>
         <form class="newsletter-form" novalidate>
           <input type="email" name="email" placeholder="Tu correo" autocomplete="email" aria-label="Tu correo" required maxlength="120"/>
@@ -619,7 +628,7 @@ const slides=document.querySelectorAll('.hero-slide');
 const dotsWrap=document.getElementById('heroDots');
 slides.forEach((_,i)=>{
   const d=document.createElement('button');
-  d.className='hero-dot'+(i===0?' hero-dot--active':'');
+  d.className='hero-dot'+(i===0?' hero-dot--active':''); d.type='button'; d.setAttribute('aria-label','Ver imagen '+(i+1)+' de '+slides.length);
   d.addEventListener('click',()=>goToSlide(i));
   dotsWrap.appendChild(d);
 });
@@ -798,7 +807,7 @@ function idealoPlayer(box,src,opts){
   });
 })();
 </script>
-<script>addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('.hero-slide[data-bg]').forEach(el=>{el.style.backgroundImage='url('+el.dataset.bg+')';}),300));</script>
+<script>addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('.hero-slide[data-bg]').forEach(el=>{var w=innerWidth<=700?900:innerWidth<=1280?1400:1920; el.style.backgroundImage='url('+el.dataset.bg.replace('w_1920,','w_'+w+',')+')';}),300));</script>
 <script>
 /* Analítica (Google Analytics 4). Para activarla, escribe el ID (G-XXXXXXXXXX) entre las comillas. */
 window.IDEALO_GA='';

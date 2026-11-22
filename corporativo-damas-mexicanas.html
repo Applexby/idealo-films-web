@@ -575,6 +575,16 @@ img{max-width:100%;display:block}
 .ip-vol::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:0}
 .ip:fullscreen{border-radius:0}
 @media(max-width:700px){.ip-big{width:66px;height:66px}.ip-big svg{width:26px;height:26px}.ip-bar{padding:34px 12px 8px}.ip-vol{display:none}.ip-btn{width:38px;height:38px}.ip-pp{width:40px;height:40px}.ip-time{font-size:12px}}
+.nl-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
+.newsletter-form{position:relative}
+.newsletter-form.sending button svg{animation:nlspin .9s linear infinite}
+@keyframes nlspin{to{transform:rotate(360deg)}}
+.newsletter-form.bad{border-color:#ff9a8a}
+.nl-msg{font-size:.82rem;line-height:1.5;margin-top:10px;min-height:0;color:rgba(255,255,255,.8)}
+.nl-msg:empty{display:none}
+.nl-msg.ok{color:#ffc978}.nl-msg.err{color:#ff9a8a}
+.nl-legal{font-size:.72rem;line-height:1.5;color:rgba(255,255,255,.45);margin-top:10px}
+.nl-legal a{font-size:inherit!important;display:inline!important;padding:0!important;color:rgba(255,255,255,.7)!important;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -703,10 +713,13 @@ img{max-width:100%;display:block}
       <div class="footer-col newsletter">
         <h4>Mantente al día</h4>
         <p style="color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.6">Recibe novedades y contenido detrás de cámaras.</p>
-        <form class="newsletter-form" onsubmit="return false">
-          <input type="email" placeholder="Tu correo"/>
-          <button type="submit" aria-label="Enviar"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+        <form class="newsletter-form" novalidate>
+          <input type="email" name="email" placeholder="Tu correo" autocomplete="email" aria-label="Tu correo" required maxlength="120"/>
+          <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" class="nl-hp"/>
+          <button type="submit" aria-label="Suscribirme"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
         </form>
+        <div class="nl-msg" role="status" aria-live="polite"></div>
+        <div class="nl-legal">Al suscribirte aceptas recibir correos de Idealo Films. Puedes darte de baja cuando quieras. <a href="privacidad.html">Privacidad</a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -898,6 +911,37 @@ function idealoPlayer(box,src,opts){
   if(opts.autoplay!==false){ ip.classList.add('wait'); v.play().catch(()=>ip.classList.remove('wait')); }
   return ip;
 }
+</script>
+<script>
+/* Suscripción «Mantente al día» → Google Apps Script → Notion */
+(function(){
+  const NL_ENDPOINT='https://script.google.com/macros/s/AKfycbwGvrfl-k-JgjGSBUxLnY3LO1AxESvIdiudcMUQgeWpojT7s27HD7pk-Zutd5e8kCBI/exec';
+  document.querySelectorAll('.newsletter-form').forEach(form=>{
+    const input=form.querySelector('input[name=email]'), hp=form.querySelector('input[name=web]'), btn=form.querySelector('button');
+    const msg=form.parentElement.querySelector('.nl-msg');
+    const say=(t,c)=>{ msg.textContent=t; msg.className='nl-msg'+(c?' '+c:''); };
+    input.addEventListener('input',()=>{ form.classList.remove('bad'); if(msg.classList.contains('err')) say(''); });
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      if(form.classList.contains('sending')) return;
+      const email=input.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ form.classList.add('bad'); say('Escribe un correo válido, por ejemplo nombre@correo.com','err'); input.focus(); return; }
+      if(!/^https:/.test(NL_ENDPOINT)){ say('Las suscripciones se activan muy pronto. ¡Gracias por tu interés!','ok'); return; }
+      form.classList.add('sending'); btn.disabled=true; say('Enviando…');
+      const body=new URLSearchParams({email:email, web:hp?hp.value:'', pagina:location.pathname.split('/').pop()||'index.html'});
+      try{
+        const r=await fetch(NL_ENDPOINT,{method:'POST',body:body});
+        const d=await r.json().catch(()=>({ok:r.ok}));
+        if(d.ok){ say('¡Listo! Te avisaremos de nuestras novedades.','ok'); form.reset(); }
+        else if(d.error==='correo_invalido'){ form.classList.add('bad'); say('Ese correo no parece válido. Revísalo, por favor.','err'); }
+        else say('No pudimos registrarte. Inténtalo de nuevo en unos minutos.','err');
+      }catch(err){
+        try{ await fetch(NL_ENDPOINT,{method:'POST',mode:'no-cors',body:body}); say('¡Listo! Te avisaremos de nuestras novedades.','ok'); form.reset(); }
+        catch(e2){ say('Sin conexión. Inténtalo de nuevo en unos minutos.','err'); }
+      }finally{ form.classList.remove('sending'); btn.disabled=false; }
+    });
+  });
+})();
 </script>
 </body>
 </html>
